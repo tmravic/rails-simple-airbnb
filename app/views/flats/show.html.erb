@@ -1,0 +1,33 @@
+<div class="map">
+  <%= image_tag @flat.photo if @flat.photo.attached?%>
+</div>
+<div class="container">
+  <div class="row justify-content-between">
+    <div class="col col-8 pull-up">
+      <div class="flat-show mb-3">
+        <h1><%= @flat.name %></h1>
+        <p><%= @flat.address %></p>
+      </div>
+      <div class="flat-show">
+        <h3>A bit more about this flat...</h3>
+        <p><%= @flat.description %></p>
+      </div>
+    </div>
+    <div class="col col-4 pull-up">
+      <div class="flat-show mb-3">
+        <h4>Book this place</h4>
+        <%= render 'form', flat: @flat %>
+      </div>
+      <div class="flat-show mb-3">
+        <h3>Details</h3>
+        <div class="d-flex justify-content-start">
+          <h6 class="mx-2 pt-2"><i class="fas fa-user-friends"></i> <%= @flat.number_of_guests %></h6>
+          <h6 class="mx-2 pt-2"><i class="fas fa-dollar-sign"></i> <%= @flat.price_per_night %></h6>
+        </div>
+      </div>
+      <div class="flat-show mb-3">
+        <h3>Share <i class="fab fa-facebook-square me-2"></i><i class="fab fa-twitter-square me-2"></i><i class="fab fa-pinterest-square me-2"></i><i class="fas fa-envelope-square me-2"></i> </h3>
+      </div>
+    </div>
+  </div>
+</div>
